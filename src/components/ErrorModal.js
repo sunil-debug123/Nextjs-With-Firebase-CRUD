@@ -26,9 +26,9 @@ const ErrorModal = ({ isOpen, message, onClose }) => {
               </button>
               <div className="text-center">
                 <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
-                <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                <svg className="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                             d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </div>
@@ -42,10 +42,5 @@ const ErrorModal = ({ isOpen, message, onClose }) => {
     </>
   );
 }
-
-ErrorModal.defaultProps = {
-  isOpen: false,
-  message: "An error occurred!",
-};
 
 export default ErrorModal;

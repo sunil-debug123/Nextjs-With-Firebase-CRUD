@@ -49,9 +49,4 @@ const SuccessModal = ({ isOpen, message, onClose }) => {
   );
 }
 
-SuccessModal.defaultProps = {
-  isOpen: false,
-  message: "Operation successful!",
-};
-
 export default SuccessModal;

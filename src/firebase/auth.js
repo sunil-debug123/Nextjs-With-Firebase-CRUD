@@ -15,7 +15,6 @@ const AuthUserContext = createContext({
 export default function useFirebaseAuth() {
   const [authUser, setAuthUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [authError, setAuthError] = useState(null);
 
   const cleanupAuthUser = () => {
     setAuthUser(null);
@@ -39,7 +38,6 @@ export default function useFirebaseAuth() {
   // sign up
   const signUp = async (email, password) => {
     setIsLoading(true);
-    setAuthError(null);
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       setAuthUser({
@@ -48,7 +46,7 @@ export default function useFirebaseAuth() {
         username: userCredential.user.displayName,
       });
     } catch (error) {
-      setAuthError(error.message);
+      throw error;
     } finally {
       setIsLoading(false);
     }
@@ -57,7 +55,6 @@ export default function useFirebaseAuth() {
   // sign in
   const signIn = async (email, password) => {
     setIsLoading(true);
-    setAuthError(null);
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       setAuthUser({
@@ -66,7 +63,7 @@ export default function useFirebaseAuth() {
         username: userCredential.user.displayName,
       });
     } catch (error) {
-      setAuthError(error.message);
+      throw error;
     } finally {
       setIsLoading(false);
     }
@@ -86,7 +83,6 @@ export default function useFirebaseAuth() {
     authUser,
     setAuthUser,
     isLoading,
-    authError,
     signUp,
     signIn,
     signOut,
