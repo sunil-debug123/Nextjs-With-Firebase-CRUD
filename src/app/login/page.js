@@ -1,5 +1,7 @@
 'use client'
 
+import Link from "next/link";
+
 function Page() {
 
   return (
@@ -47,9 +49,9 @@ function Page() {
                             or
                         </p>
             
-                        <a href="#" class="flex-2 underline">
+                        <Link href="/signup" class="flex-2 underline">
                             Create an Account
-                        </a>
+                        </Link>
                     </div>
                 </form>
             </div>
