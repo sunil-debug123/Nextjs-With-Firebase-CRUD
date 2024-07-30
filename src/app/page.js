@@ -97,9 +97,9 @@ export default function Home() {
                   </defs>
                 </svg>
                 <FontAwesomeIcon icon={faFire} style={{width: "36px", height: "36px"}}className="icon-size text-red-600" />
-                <a href="#" className="text-3xl font-semibold text-gray-800 md:text-4xl">
+                <Link href="/" className="text-3xl font-semibold text-gray-800 md:text-4xl">
                   Firebase + Next.js
-                </a>
+                </Link>
               </div>
               <p className="mt-2 text-sm text-gray-500 md:text-base">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -108,18 +108,18 @@ export default function Home() {
                 voluptates. Cumque debitis dignissimos id quam vel!
               </p>
               <div className="flex justify-center lg:justify-start mt-6">
-                <a
+                <Link
                   className="px-4 py-3 bg-gray-900 text-gray-200 text-xs font-semibold rounded hover:bg-gray-800"
-                  href="#"
+                  href="/dashboard"
                 >
                   Get Started
-                </a>
-                <a
+                </Link>
+                <Link
                   className="mx-4 px-4 py-3 bg-gray-300 text-gray-900 text-xs font-semibold rounded hover:bg-gray-400"
-                  href="#"
+                  href="/signup"
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -142,18 +142,7 @@ export default function Home() {
 
       <footer className="bg-gray-800 text-white py-6 w-full">
         <div className="container mx-auto px-6 md:px-12 text-center">
-          <p className="mb-4">&copy; 2024 Your Brand. All rights reserved.</p>
-          <div className="flex justify-center space-x-4">
-            <a href="#" className="hover:text-gray-400">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-gray-400">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-gray-400">
-              Contact Us
-            </a>
-          </div>
+          <p className="mb-4">&copy; 2024 sunil_debug123. All rights reserved.</p>
         </div>
       </footer>
     </main>
