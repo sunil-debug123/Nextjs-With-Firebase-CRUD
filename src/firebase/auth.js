@@ -21,18 +21,18 @@ export default function useFirebaseAuth() {
     setIsLoading(false);
   };
 
-  const authStateChanged = async (user) => {
+  const authStateChanged = (user) => {
     setIsLoading(true);
     if (!user) {
       cleanupAuthUser();
-      return;
+    } else {
+      setAuthUser({
+        uid: user.uid,
+        email: user.email,
+        username: user.displayName,
+      });
+      setIsLoading(false);
     }
-    setAuthUser({
-      uid: user.uid,
-      email: user.email,
-      username: user.displayName,
-    });
-    setIsLoading(false);
   };
 
   // sign up

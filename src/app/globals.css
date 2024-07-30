@@ -132,3 +132,8 @@
         transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
     }
 }
+
+.icon-size {
+    width: 36px;
+    height: 36px;
+  }
