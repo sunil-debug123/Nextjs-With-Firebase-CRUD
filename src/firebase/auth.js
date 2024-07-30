@@ -1,10 +1,15 @@
+'use client';
+
 import { useContext, createContext, useState, useEffect } from 'react';
-import { onAuthStateChanged, signOut as authSignOut } from 'firebase/auth';
+import { onAuthStateChanged, signOut as authSignOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebase';
 
 const AuthUserContext = createContext({
   authUser: null,
   isLoading: true,
+  signUp: async () => {},
+  signIn: async () => {},
+  signOut: async () => {},
 });
 
 export default function useFirebaseAuth() {
@@ -15,6 +20,7 @@ export default function useFirebaseAuth() {
     setAuthUser(null);
     setIsLoading(false);
   };
+
   const authStateChanged = async (user) => {
     setIsLoading(true);
     if (!user) {
@@ -29,7 +35,41 @@ export default function useFirebaseAuth() {
     setIsLoading(false);
   };
 
-  //signOut
+  // sign up
+  const signUp = async (email, password) => {
+    setIsLoading(true);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      setAuthUser({
+        uid: userCredential.user.uid,
+        email: userCredential.user.email,
+        username: userCredential.user.displayName,
+      });
+    } catch (error) {
+      throw error;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // sign in
+  const signIn = async (email, password) => {
+    setIsLoading(true);
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setAuthUser({
+        uid: userCredential.user.uid,
+        email: userCredential.user.email,
+        username: userCredential.user.displayName,
+      });
+    } catch (error) {
+      throw error;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // sign out
   const signOut = () => {
     authSignOut(auth).then(() => cleanupAuthUser());
   };
@@ -43,6 +83,8 @@ export default function useFirebaseAuth() {
     authUser,
     setAuthUser,
     isLoading,
+    signUp,
+    signIn,
     signOut,
   };
 }

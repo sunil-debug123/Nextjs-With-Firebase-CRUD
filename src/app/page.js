@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
@@ -24,18 +26,18 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col md:flex-row hidden md:block -mx-2">
-              <a
-                href="/user/login"
+              <Link
+                href="/login"
                 className="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
               >
                 Login
-              </a>
-              <a
-                href="/user/signup"
+              </Link>
+              <Link
+                href="/signup"
                 className="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
               >
                 Signup
-              </a>
+              </Link>
             </div>
           </div>
         </nav>
