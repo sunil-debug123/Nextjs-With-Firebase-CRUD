@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFire } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   return (
@@ -8,7 +10,7 @@ export default function Home() {
           <div className="md:flex items-center justify-between py-2 px-8 md:px-12">
             <div className="flex justify-between items-center">
               <div className="text-2xl font-bold text-gray-800 md:text-3xl">
-                  Crud App
+                Crud App
               </div>
               <div className="md:hidden">
                 <button
@@ -45,8 +47,56 @@ export default function Home() {
           <div className="flex items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
             <div>
               <div className="flex items-center space-x-4">
-                <i className="fab fa-react text-3xl text-indigo-600"></i>
-                <i className="fas fa-fire text-3xl text-red-600"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 180 180"
+                  className="icon-size"
+                >
+                  <mask
+                    height="180"
+                    id=":r8:mask0_408_134"
+                    maskUnits="userSpaceOnUse"
+                    width="180"
+                    x="0"
+                    y="0"
+                    style={{ maskType: "alpha" }}
+                  >
+                    <circle cx="90" cy="90" fill="black" r="90"></circle>
+                  </mask>
+                  <g mask="url(#:r8:mask0_408_134)">
+                    <circle cx="90" cy="90" data-circle="true" fill="black" r="90"></circle>
+                    <path
+                      d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
+                      fill="url(#:r8:paint0_linear_408_134)"
+                    ></path>
+                    <rect fill="url(#:r8:paint1_linear_408_134)" height="72" width="12" x="115" y="54"></rect>
+                  </g>
+                  <defs>
+                    <linearGradient
+                      gradientUnits="userSpaceOnUse"
+                      id=":r8:paint0_linear_408_134"
+                      x1="109"
+                      x2="144.5"
+                      y1="116.5"
+                      y2="160.5"
+                    >
+                      <stop stopColor="white"></stop>
+                      <stop offset="1" stopColor="white" stopOpacity="0"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      gradientUnits="userSpaceOnUse"
+                      id=":r8:paint1_linear_408_134"
+                      x1="121"
+                      x2="120.799"
+                      y1="54"
+                      y2="106.875"
+                    >
+                      <stop stopColor="white"></stop>
+                      <stop offset="1" stopColor="white" stopOpacity="0"></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <FontAwesomeIcon icon={faFire} style={{width: "36px", height: "36px"}}className="icon-size text-red-600" />
                 <a href="#" className="text-3xl font-semibold text-gray-800 md:text-4xl">
                   Firebase + Next.js
                 </a>
