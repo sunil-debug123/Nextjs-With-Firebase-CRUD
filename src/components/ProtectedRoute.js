@@ -1,10 +1,12 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Loader from './Loader';
 import { useAuth } from '@/firebase/auth';
 
 const ProtectedRoute = (WrappedComponent) => {
-  return (props) => {
+  const ProtectedComponent = (props) => {
     const { authUser, isLoading } = useAuth();
     const router = useRouter();
     const pathname = usePathname();
@@ -23,12 +25,16 @@ const ProtectedRoute = (WrappedComponent) => {
       }
     }, [authUser, isLoading, pathname, router]);
 
-    if (isLoading || redirecting) {
+    if (redirecting) {
       return <Loader />;
     }
 
     return <WrappedComponent {...props} />;
   };
+
+  ProtectedComponent.displayName = `ProtectedRoute(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;
+
+  return ProtectedComponent;
 };
 
 export default ProtectedRoute;
