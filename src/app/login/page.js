@@ -6,6 +6,8 @@ import Link from "next/link";
 import SuccessModal from "@/components/SuccessModal";
 import ErrorModal from "@/components/ErrorModal";
 import Loader from "@/components/Loader";
+import { useRouter } from "next/navigation";
+import ProtectedRoute from "@/components/ProtectedRoute";
 
 function Page() {
   const { signIn, authError, isLoading } = useAuth();
@@ -14,6 +16,7 @@ function Page() {
   const [errorModalOpen, setErrorModalOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const router = useRouter();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -36,6 +39,7 @@ function Page() {
   const handleCloseSuccessModal = () => {
     setSuccessModalOpen(false);
     setSuccessMessage('');
+    router.push('/dashboard');
   };
 
   const handleCloseErrorModal = () => {
@@ -106,4 +110,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default ProtectedRoute(Page);

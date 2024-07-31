@@ -6,6 +6,7 @@ import Link from "next/link";
 import SuccessModal from "@/components/SuccessModal";
 import ErrorModal from "@/components/ErrorModal";
 import Loader from "@/components/Loader";
+import ProtectedRoute from "@/components/ProtectedRoute";
 
 function Page() {
   const { signUp, isLoading } = useAuth();
@@ -129,4 +130,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default ProtectedRoute(Page);
