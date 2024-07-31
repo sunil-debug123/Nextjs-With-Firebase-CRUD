@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFire } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFire } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
@@ -43,7 +43,7 @@ export default function Home() {
             </div>
           </div>
         </nav>
-        <div className="flex bg-white" style={{ height: '600px' }}>
+        <div className="flex bg-white" style={{ height: "600px" }}>
           <div className="flex items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
             <div>
               <div className="flex items-center space-x-4">
@@ -64,12 +64,24 @@ export default function Home() {
                     <circle cx="90" cy="90" fill="black" r="90"></circle>
                   </mask>
                   <g mask="url(#:r8:mask0_408_134)">
-                    <circle cx="90" cy="90" data-circle="true" fill="black" r="90"></circle>
+                    <circle
+                      cx="90"
+                      cy="90"
+                      data-circle="true"
+                      fill="black"
+                      r="90"
+                    ></circle>
                     <path
                       d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
                       fill="url(#:r8:paint0_linear_408_134)"
                     ></path>
-                    <rect fill="url(#:r8:paint1_linear_408_134)" height="72" width="12" x="115" y="54"></rect>
+                    <rect
+                      fill="url(#:r8:paint1_linear_408_134)"
+                      height="72"
+                      width="12"
+                      x="115"
+                      y="54"
+                    ></rect>
                   </g>
                   <defs>
                     <linearGradient
@@ -96,16 +108,24 @@ export default function Home() {
                     </linearGradient>
                   </defs>
                 </svg>
-                <FontAwesomeIcon icon={faFire} style={{width: "36px", height: "36px"}}className="icon-size text-red-600" />
-                <Link href="/" className="text-3xl font-semibold text-gray-800 md:text-4xl">
+                <FontAwesomeIcon
+                  icon={faFire}
+                  style={{ width: "36px", height: "36px" }}
+                  className="icon-size text-red-600"
+                />
+                <Link
+                  href="/"
+                  className="text-3xl font-semibold text-gray-800 md:text-4xl"
+                >
                   Firebase + Next.js
                 </Link>
               </div>
               <p className="mt-2 text-sm text-gray-500 md:text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Blanditiis commodi cum cupiditate ducimus, fugit harum id
-                necessitatibus odio quam quasi, quibusdam rem tempora
-                voluptates. Cumque debitis dignissimos id quam vel!
+                This repository demonstrates how to integrate Firebase with a
+                Next.js application to implement basic CRUD (Create, Read,
+                Update, Delete) operations. It showcases how to use Firebase's
+                Firestore database for managing data and includes user
+                authentication features.
               </p>
               <div className="flex justify-center lg:justify-start mt-6">
                 <Link
@@ -125,13 +145,13 @@ export default function Home() {
           </div>
           <div
             className="hidden lg:block lg:w-1/2"
-            style={{ clipPath: 'polygon(10% 0, 100% 0%, 100% 100%, 0 100%)' }}
+            style={{ clipPath: "polygon(10% 0, 100% 0%, 100% 100%, 0 100%)" }}
           >
             <div
               className="h-full object-cover"
               style={{
                 backgroundImage:
-                  'url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80)',
+                  "url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80)",
               }}
             >
               <div className="h-full bg-black opacity-25"></div>
@@ -142,7 +162,9 @@ export default function Home() {
 
       <footer className="bg-gray-800 text-white py-6 w-full">
         <div className="container mx-auto px-6 md:px-12 text-center">
-          <p className="mb-4">&copy; 2024 sunil_debug123. All rights reserved.</p>
+          <p className="mb-4">
+            &copy; 2024 sunil_debug123. All rights reserved.
+          </p>
         </div>
       </footer>
     </main>
